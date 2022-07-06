@@ -3,7 +3,7 @@ const app = new Vue(
         el: "#app",
 
         data: {
-            index: 0,
+            imgIndex: 0,
 
             slides : [
                 {
@@ -37,31 +37,22 @@ const app = new Vue(
 
         methods: {
             nextSlides: function () {
-                this.index++
-                if(this.index === this.slides.length){
-                    this.index = 0;
+                this.imgIndex++
+                if(this.imgIndex === this.slides.length){
+                    this.imgIndex = 0;
                 };
             },
 
             prevSlides: function () {
-                this.index--
-                if(this.index === 0){
-                    this.index = this.slides.length - 1;
+                this.imgIndex--
+                if(this.imgIndex === 0){
+                    this.imgIndex = this.slides.length - 1;
                 };
+            },
+
+            clickImg: function (indexImg){
+                this.imgIndex = indexImg;
             }
         },
     },
 );
-
-
-
-
-
-
-
-
-/** 
- * 
- * mettere gli oggetti nel html 
- * 
-*/
